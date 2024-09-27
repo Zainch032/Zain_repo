@@ -1,4 +1,13 @@
-def make_purchase(self, quantity):
+class Product:
+  def init(self, name, amount, price):
+      self.name = name
+      self.amount = amount
+      self.price = price
+
+  def get_price(self, quantity):
+      pass
+
+  def make_purchase(self, quantity):
         """Reduces the stock by the purchased amount and prints the total cost."""
         try:
             if quantity <= 0:
