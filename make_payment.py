@@ -1,10 +1,17 @@
-def get_price(self,quantity):
-    try:
-        a = input("What do you want to purchase? ")
-        quantity = int(input("How many do you want to purchase? "))
+class Product:
+    def __init__(self, name, amount, price):
+        """
+        Initializes the Product object with a name, amount in stock, and price per unit.
+        """
+        self.name = name
+        self.amount = amount
+        self.price = price
 
+    def get_price(self, quantity):
+   
+        """
         if quantity <= 0:
-            raise ValueError("You must purchase at least one item.")
+            raise ValueError("Quantity must be greater than 0.")
 
         if quantity < 10:
             discount = 0
@@ -13,13 +20,11 @@ def get_price(self,quantity):
         else:
             discount = 20
 
-        # Summary output
-        print(f"You purchased {quantity} {a}(s) and received a {discount}% discount.")
-
-    except ValueError as e:
-        print(f"Error: {e}")
+        total_price = quantity * self.price * (1 - discount / 100)
+        return total_price
     except Exception as e:
         print("An unexpected error occurred:", e)
+    
+     def make_purchase(self, quantity):
+      pass
 
-# Example usage
-get_price()
