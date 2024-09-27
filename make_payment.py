@@ -29,24 +29,5 @@ class Product:
             print(f"An unexpected error occurred: {e}")
 
     def make_payment(self):
-        try:
-            payment = float(input(f"Total amount due is ${self.total_price:.2f}. Enter payment amount: $"))
+        pass
 
-            if payment < self.total_price:
-                raise ValueError("Insufficient payment. Please enter the correct amount.")
-            elif payment > self.total_price:
-                change = payment - self.total_price
-                print(f"Payment successful! Your change is ${change:.2f}.")
-            else:
-                print("Payment successful! No change is due.")
-
-        except ValueError as e:
-            print(f"Error: {e}")
-        except Exception as e:
-            print(f"An unexpected error occurred: {e}")
-
-product = Product("Widget", 100, 10)
-product.get_price()
-
-if product.total_price > 0:
-    product.make_payment()
