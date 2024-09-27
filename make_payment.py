@@ -1,4 +1,4 @@
-def get_price():
+def get_price(self,quantity):
     try:
         a = input("What do you want to purchase? ")
         quantity = int(input("How many do you want to purchase? "))
